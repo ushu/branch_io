@@ -1,0 +1,566 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 12:38:37 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://ENV.test-app.link/LINK1xxx"}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 12:38:37 GMT
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>","tags":["test"],"channel":"test","feature":"spec","stage":"test","data":{"value":42}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 12:38:37 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://ENV.test-app.link/LINK2xxx"}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 12:38:37 GMT
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url/bulk/<BRANCH_KEY>
+    body:
+      encoding: UTF-8
+      string: "[]"
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 12:38:38 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 12:38:38 GMT
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url/bulk/<BRANCH_KEY>
+    body:
+      encoding: UTF-8
+      string: '[{"channel":"test"},{"channel":"test"}]'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 12:38:39 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '97'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"url":"https://ENV.test-app.link/LINK3xxx"},{"url":"https://ENV.test-app.link/LINK4xxx"}]'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 12:38:39 GMT
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>","tags":["test"],"channel":"code","feature":"test"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 12:38:39 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://ENV.test-app.link/LINK5xxx"}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 12:38:39 GMT
+- request:
+    method: get
+    uri: https://api.branch.io/v1/url?branch_key=<BRANCH_KEY>&url=https://ENV.test-app.link/LINK5xxx
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 12:38:40 GMT
+      Etag:
+      - W/"fb-2700212854"
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '251'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"channel":"code","feature":"test","tags":["test"],"data":{"$one_time_use":false,"~channel":"code","~creation_source":0,"~feature":"test","~id":"279190676690858328","~tags":["test"],"url":"https://ENV.test-app.link/LINK5xxx"},"type":0,"alias":null}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 12:38:40 GMT
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>","tags":["test","test-update"],"channel":"code","feature":"test"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 12:38:41 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://ENV.test-app.link/LINK6xxx"}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 12:38:41 GMT
+- request:
+    method: put
+    uri: https://api.branch.io/v1/url?url=https://ENV.test-app.link/LINK6xxx
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>","branch_secret":"<BRANCH_SECRET>","channel":"retest"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 12:38:41 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '283'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"channel":"retest","feature":"test","tags":["test","test-update"],"data":{"$one_time_use":false,"~channel":"retest","~creation_source":0,"~feature":"test","~id":"279214820782371109","~tags":["test","test-update"],"url":"https://ENV.test-app.link/LINK6xxx"},"type":0,"alias":null}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 12:38:42 GMT
+- request:
+    method: get
+    uri: https://api.branch.io/v1/url?branch_key=<BRANCH_KEY>&url=https://ENV.test-app.link/LINK6xxx
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 12:38:42 GMT
+      Etag:
+      - W/"11b-1678275163"
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '283'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"channel":"retest","feature":"test","tags":["test","test-update"],"data":{"$one_time_use":false,"~channel":"retest","~creation_source":0,"~feature":"test","~id":"279214820782371109","~tags":["test","test-update"],"url":"https://ENV.test-app.link/LINK6xxx"},"type":0,"alias":null}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 12:38:42 GMT
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>","tags":["test"],"channel":"test","stage":"test","data":{"value":42}}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 13:56:20 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://ENV.test-app.link/LINK7xxx"}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 13:56:21 GMT
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>","tags":["test"],"channel":"code"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 13:56:21 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://ENV.test-app.link/LINK8xxx"}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 13:56:21 GMT
+- request:
+    method: get
+    uri: https://api.branch.io/v1/url?branch_key=<BRANCH_KEY>&url=https://ENV.test-app.link/LINK8xxx
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 13:56:22 GMT
+      Etag:
+      - W/"d8-2814673697"
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '216'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"channel":"code","tags":["test"],"data":{"$one_time_use":false,"~channel":"code","~creation_source":0,"~id":"279236439382847620","~tags":["test"],"url":"https://ENV.test-app.link/LINK8xxx"},"type":0,"alias":null}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 13:56:22 GMT
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>","tags":["test","test-update"],"channel":"code"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 13:56:23 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://ENV.test-app.link/LINK9xxx"}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 13:56:23 GMT
+- request:
+    method: put
+    uri: https://api.branch.io/v1/url?url=https://ENV.test-app.link/LINK9xxx
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>","branch_secret":"<BRANCH_SECRET>","channel":"retest"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 13:56:23 GMT
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '248'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"channel":"retest","tags":["test","test-update"],"data":{"$one_time_use":false,"~channel":"retest","~creation_source":0,"~id":"279236445598774158","~tags":["test","test-update"],"url":"https://ENV.test-app.link/LINK9xxx"},"type":0,"alias":null}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 13:56:23 GMT
+- request:
+    method: get
+    uri: https://api.branch.io/v1/url?branch_key=<BRANCH_KEY>&url=https://ENV.test-app.link/LINK9xxx
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 06 Jul 2016 13:56:24 GMT
+      Etag:
+      - W/"f8-1592842631"
+      Server:
+      - openresty/1.7.7.2
+      X-Content-Type-Options:
+      - nosniff
+      X-Powered-By:
+      - Express
+      Content-Length:
+      - '248'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"channel":"retest","tags":["test","test-update"],"data":{"$one_time_use":false,"~channel":"retest","~creation_source":0,"~id":"279236445598774158","~tags":["test","test-update"],"url":"https://ENV.test-app.link/LINK9xxx"},"type":0,"alias":null}'
+    http_version: 
+  recorded_at: Wed, 06 Jul 2016 13:56:24 GMT
+recorded_with: VCR 3.0.3

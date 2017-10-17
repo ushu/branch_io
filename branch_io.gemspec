@@ -1,4 +1,4 @@
-# coding: utf-8
+
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'branch_io/version'
@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Aurélien Noce"]
   spec.email         = ["aurelien.noce@imagine-app.fr"]
 
-  spec.summary       = %q{A Client for the Branch.io deep linking public API}
-  spec.description   = %q{This wrapper allows you to create and update deep links on branch.io, using the public REST API.}
+  spec.summary       = 'A Client for the Branch.io deep linking public API'
+  spec.description   = 'This wrapper allows you to create and update deep links on branch.io, using the public REST API.'
   spec.homepage      = "https://github.com/ushu/branch_io"
   spec.license       = "MIT"
 

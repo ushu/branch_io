@@ -21,5 +21,4 @@ module BranchIO
     end
     super
   end
-
 end

@@ -1,5 +1,4 @@
 module BranchIO
-
   class LinkProperties
     attr_reader :tags
     attr_reader :channel
@@ -18,8 +17,8 @@ module BranchIO
       end
     end
 
-    def initialize(options={})
-      @tags     = options.delete(:tags)     ||options.delete("tags")
+    def initialize(options = {})
+      @tags     = options.delete(:tags) || options.delete("tags")
       @channel  = options.delete(:channel)  || options.delete("channel")
       @feature  = options.delete(:feature)  || options.delete("feature")
       @campaign = options.delete(:campaign) || options.delete("campaign")
@@ -29,7 +28,7 @@ module BranchIO
       @data     = options.delete(:data)     || options.delete("data")
 
       unless options.empty?
-        raise ErrorInvalidParameters.new(options.keys)
+        raise ErrorInvalidParameters, options.keys
       end
     end
 
@@ -50,9 +49,8 @@ module BranchIO
       attr_reader :parameters
       def initialize(parameters)
         @parameters = parameters
-        super("Invalid parameters for BranchIO::LinkProperties: \"#{@parameters.join(", ")}\"")
+        super("Invalid parameters for BranchIO::LinkProperties: \"#{@parameters.join(', ')}\"")
       end
     end
   end
-
 end

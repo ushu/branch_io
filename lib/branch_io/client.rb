@@ -5,7 +5,6 @@ require "json"
 require_relative "client/links"
 
 module BranchIO
-
   class Client
     class ErrorMissingBranchKey < StandardError; end
 
@@ -18,12 +17,12 @@ module BranchIO
 
     # Basic Api client
     attr_reader :branch_key, :branch_secret
-    def initialize(branch_key=ENV["BRANCH_KEY"], branch_secret=ENV["BRANCH_SECRET"])
+    def initialize(branch_key = ENV["BRANCH_KEY"], branch_secret = ENV["BRANCH_SECRET"])
       @branch_key = branch_key
       @branch_secret = branch_secret
 
       unless branch_key
-        raise ErrorMissingBranchKey.new("No Branch Key found: please provided one such key to BranchIO::Client#initialize or by setting the BRANCH_KEY environment variable")
+        raise ErrorMissingBranchKey, "No Branch Key found: please provided one such key to BranchIO::Client#initialize or by setting the BRANCH_KEY environment variable"
       end
     end
 
@@ -31,12 +30,12 @@ module BranchIO
       self.class.get(url, headers: default_headers)
     end
 
-    def post(url, data={})
+    def post(url, data = {})
       body = data.to_json
       self.class.post(url, body: body, headers: default_headers)
     end
 
-    def put(url, data={})
+    def put(url, data = {})
       body = data.to_json
       self.class.put(url, body: body, headers: default_headers)
     end
@@ -45,7 +44,7 @@ module BranchIO
 
     def ensure_branch_secret_defined!
       unless branch_secret
-        raise ErrorMissingBranchKey.new("No Branch Secret found: please provided one such key to BranchIO::Client#initialize or by setting the BRANCH_SECRET environment variable")
+        raise ErrorMissingBranchKey, "No Branch Secret found: please provided one such key to BranchIO::Client#initialize or by setting the BRANCH_SECRET environment variable"
       end
     end
 
@@ -55,7 +54,5 @@ module BranchIO
         "Accept" => "application/json"
       }
     end
-
   end
-
 end

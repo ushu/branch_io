@@ -1,16 +1,12 @@
-require 'spec_helper'
-
 ENV["BRANCH_KEY"] = "key_test_ngn27ouyf8yBVhq5kffg7ncfErc7cISG"
 ENV["BRANCH_SECRET"] = "secret_test_6L2X9Pt3k07Tn6HW3sKcR3VZFkklISYY"
 
 describe BranchIO::Client do
-
   describe "#initialize" do
-
     it "should raise an exception if no branch key is provided" do
-      expect {
+      expect do
         BranchIO::Client.new(nil)
-      }.to raise_error(BranchIO::Client::ErrorMissingBranchKey)
+      end.to raise_error(BranchIO::Client::ErrorMissingBranchKey)
     end
 
     it "should try to load the branch key from the BRANCH_KEY envorionemnt variable" do
@@ -22,7 +18,6 @@ describe BranchIO::Client do
       expect(client.branch_key).to eq("12345")
       expect(client.branch_secret).to eq("666")
     end
-
   end
 
   describe BranchIO::Client::Links do
@@ -43,9 +38,9 @@ describe BranchIO::Client do
         res = BranchIO::Client::ErrorResponse.new(double(success?: false))
         expect(client).to receive(:link).and_return(res)
 
-        expect {
+        expect do
           client.link!
-        }.to raise_error(BranchIO::Client::ErrorApiCallFailed)
+        end.to raise_error(BranchIO::Client::ErrorApiCallFailed)
       end
     end
 
@@ -80,13 +75,14 @@ describe BranchIO::Client do
 
           # Create a new link
           res = client.link(
-              tags: [ "test" ],
-              channel: "test",
-              feature: "spec",
-              stage: "test",
-              data: {
-                  value: 42
-              })
+            tags: ["test"],
+            channel: "test",
+            feature: "spec",
+            stage: "test",
+            data: {
+                value: 42
+            }
+          )
 
           # It should be successbul
           expect(res).not_to be_nil
@@ -100,13 +96,14 @@ describe BranchIO::Client do
 
           # Create a new link properties object
           props = BranchIO::LinkProperties.new(
-              tags: [ "test" ],
-              channel: "test",
-              feature: "spec",
-              stage: "test",
-              data: {
-                  value: 42
-              })
+            tags: ["test"],
+            channel: "test",
+            feature: "spec",
+            stage: "test",
+            data: {
+                value: 42
+            }
+          )
 
           # Pass the configuration object to the call
           res = client.link(props)
@@ -145,12 +142,13 @@ describe BranchIO::Client do
 
           # Create a new link
           res = client.links([
-              {
-                 channel: "test"
-              },
-              {
-                channel: "test"
-              }])
+                               {
+                                  channel: "test"
+                               },
+                               {
+                                 channel: "test"
+                               }
+                             ])
 
           # It should be successbul
           expect(res).not_to be_nil
@@ -172,7 +170,7 @@ describe BranchIO::Client do
     end
 
     describe "#link_info" do
-      let!(:url) { client.link(channel: "code", feature: "test", tags: [ "test" ]).url }
+      let!(:url) { client.link(channel: "code", feature: "test", tags: ["test"]).url }
 
       it "succeeds" do
         expect(client.link_info(url)).to be_success
@@ -196,11 +194,11 @@ describe BranchIO::Client do
     end
 
     describe "#update_link" do
-      let!(:url) { client.link(channel: "code", feature: "test", tags: [ "test", "test-update" ]).url }
+      let!(:url) { client.link(channel: "code", feature: "test", tags: ["test", "test-update"]).url }
 
       it "succeeds" do
         expect(
-            client.update_link(url, channel: "retest")
+          client.update_link(url, channel: "retest")
         ).to be_success
       end
 
@@ -210,6 +208,5 @@ describe BranchIO::Client do
         expect(props.channel).to eq("retest")
       end
     end
-
   end # /Client
 end

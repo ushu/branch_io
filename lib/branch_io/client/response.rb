@@ -28,7 +28,7 @@ module BranchIO
       end
 
       def validate!
-        raise ErrorApiCallFailed.new(self) unless success?
+        raise ErrorApiCallFailed, self unless success?
       end
 
       def json
@@ -84,7 +84,7 @@ module BranchIO
       def responses
         @responses ||= json.map do |url_info|
           # below the EmbeddedResponseWrapper(s) act as a dummp HTTParty response
-          if url_info.has_key?("error")
+          if url_info.key?("error")
             ErrorResponse.new(EmbeddedResponseWrapper.new(url_info))
           else
             UrlResponse.new(EmbeddedResponseWrapper.new(url_info))
@@ -92,9 +92,14 @@ module BranchIO
         end
       end
 
+      # rubocop: disable Lint/UselessAccessModifier
+      # Not sure why RuboCop thinks this is useless.
+
       private
 
-      class EmbeddedResponseWrapper < Struct.new(:parsed_response); end
+      # rubocop: enable Lint/UselessAccessModifier
+
+      EmbeddedResponseWrapper = Struct.new(:parsed_response)
     end
 
     class LinkPropertiesResponse < Response
@@ -102,6 +107,5 @@ module BranchIO
         @link_properties ||= BranchIO::LinkProperties.new(json)
       end
     end
-
   end
 end

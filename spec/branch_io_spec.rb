@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe BranchIO do
   it 'has a version number' do
     expect(BranchIO::VERSION).not_to be nil

@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 ENV["BRANCH_KEY"] = "key_test_ngn27ouyf8yBVhq5kffg7ncfErc7cISG"
 ENV["BRANCH_SECRET"] = "secret_test_6L2X9Pt3k07Tn6HW3sKcR3VZFkklISYY"
 

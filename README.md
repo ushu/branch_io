@@ -1,7 +1,15 @@
 # A Ruby wrapper for the [branch.io](http://branch.io) [public API](https://github.com/BranchMetrics/branch-deep-linking-public-api)
 
+[![Gem](https://img.shields.io/gem/v/branch_io.svg?style=flat)](https://rubygems.org/gems/branch_io)
+[![Downloads](https://img.shields.io/gem/dt/branch_io.svg?style=flat)](https://rubygems.org/gems/branch_io)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/ushu/branch_io/blob/master/LICENSE)
+<!-- [![CircleCI](https://img.shields.io/circleci/project/github/ushu/branch_io.svg)](https://circleci.com/gh/ushu/branch_io) -->
+
+Please see the [Branch documentation](https://docs.branch.io) for general information. Please report any
+problems by opening issues in this repo.
+
 This is a simple [HTTparty](https://github.com/jnunemaker/httparty)-based gem for accessing the branch.io REST APIs,
-as descried [here](https://github.com/BranchMetrics/branch-deep-linking-public-api).
+as described [here](https://github.com/BranchMetrics/branch-deep-linking-public-api). See the [Branch API documentation](https://docs.branch.io/pages/apps/api/) for further details.
 
 It follows the exact design of the original REST API: basically links are resources you can generate and update,
 provided you hold the required credentials.
@@ -194,4 +202,3 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/ushu/b
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-

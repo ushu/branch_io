@@ -138,7 +138,7 @@ end
 _The only difference between `#links` and `#links!` is that the latter version will
 raise a new `BranchIO::ErrorApiCallFailed` exception in case of an error._
 
-### `Client#link_info` and `Client#link_info!`: Registers a [new deep linking URL](https://github.com/BranchMetrics/branch-deep-linking-public-api#creating-a-deep-linking-url)
+### `Client#link_info` and `Client#link_info!`: Returns information about a [deep linking URL](https://github.com/BranchMetrics/branch-deep-linking-public-api#creating-a-deep-linking-url)
 
 **BEWARE: this method requires the BRANCH_SECRET to be defined**
 
@@ -159,7 +159,7 @@ end
 **The only difference between `#link_info` and `#link_info!` is that the latter version will
 raise a new `BranchIO::ErrorApiCallFailed` exception in case of an error.**
 
-### `Client#update_link` and `Client#update_link!`: Registers a [new deep linking URL](https://github.com/BranchMetrics/branch-deep-linking-public-api#creating-a-deep-linking-url)
+### `Client#update_link` and `Client#update_link!`: Updates a [deep linking URL](https://github.com/BranchMetrics/branch-deep-linking-public-api#creating-a-deep-linking-url)
 
 **BEWARE: this method requires the BRANCH_SECRET to be defined**
 
@@ -179,6 +179,27 @@ end
 ```
 
 **The only difference between `#update_link` and `#update_link!` is that the latter version will
+raise a new `BranchIO::ErrorApiCallFailed` exception in case of an error.**
+
+### `Client#delete_link` and `Client#delete_link!`: Deletes a [deep linking URL](https://github.com/BranchMetrics/branch-deep-linking-public-api#creating-a-deep-linking-url)
+
+**BEWARE: this method requires the BRANCH_SECRET to be defined**
+
+This method deletes an existing link and returns the URL and deletion confirmation.
+
+```ruby
+# Call the service
+res = client.delete_link("https://...")
+
+# Inspect the server response
+if res.success?
+  puts "Successfully deleted link: #{res.link_deleted.to_json['url']}"
+else
+  puts "Error updating link info: #{res.error}"
+end
+```
+
+**The only difference between `#delete_link` and `#delete_link!` is that the latter version will
 raise a new `BranchIO::ErrorApiCallFailed` exception in case of an error.**
 
 ## Development

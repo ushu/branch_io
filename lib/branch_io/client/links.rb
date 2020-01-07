@@ -115,6 +115,36 @@ module BranchIO
           ErrorResponse.new(raw_response)
         end
       end
+
+      def delete_link!(url)
+        res = delete_link(url)
+        res.validate!
+        res
+      end
+
+      def delete_link(url)
+        ensure_branch_secret_defined!
+
+        # Build the request URL
+        encoded_url = URI.encode_www_form_component(url)
+        delete_url = "#{LINK_PATH}?url=#{encoded_url}"
+
+        # Build the request body
+        delete_json = {
+          branch_key: self.branch_key,
+          branch_secret: self.branch_secret
+        }
+
+        # Call branch.io public API
+        raw_response = self.delete(delete_url, delete_json)
+
+        # Wrap the result in a Response
+        if raw_response.success?
+          LinkDeletedResponse.new(raw_response)
+        else
+          ErrorResponse.new(raw_response)
+        end
+      end
     end
   end
 end

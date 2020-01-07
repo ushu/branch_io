@@ -107,5 +107,15 @@ module BranchIO
         @link_properties ||= BranchIO::LinkProperties.new(json)
       end
     end
+
+    class LinkDeletedResponse < Response
+      def success?
+        json["deleted"] == true
+      end
+
+      def url
+        json["url"]
+      end
+    end
   end
 end

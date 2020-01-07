@@ -40,6 +40,11 @@ module BranchIO
       self.class.put(url, body: body, headers: default_headers)
     end
 
+    def delete(url, data = {})
+      body = data.to_json
+      self.class.delete(url, body: body, headers: default_headers)
+    end
+
     private
 
     def ensure_branch_secret_defined!

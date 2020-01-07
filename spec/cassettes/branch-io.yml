@@ -563,4 +563,129 @@ http_interactions:
       string: '{"channel":"retest","tags":["test","test-update"],"data":{"$one_time_use":false,"~channel":"retest","~creation_source":0,"~id":"279236445598774158","~tags":["test","test-update"],"url":"https://ENV.test-app.link/LINK9xxx"},"type":0,"alias":null}'
     http_version: 
   recorded_at: Wed, 06 Jul 2016 13:56:24 GMT
+- request:
+    method: post
+    uri: https://api.branch.io/v1/url
+    body:
+      encoding: UTF-8
+      string: '{"sdk":"api","branch_key":"<BRANCH_KEY>","tags":["test","test-delete"],"channel":"code","feature":"test"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '47'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Tue, 07 Jan 2020 00:19:29 GMT
+      Server:
+      - openresty/1.13.6.2
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 a390f799acc33be35de7bc42ed295f39.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - MjPhIu8mM4TUAvusrRgKNvPRi47BLdrlENZMScmDhJ6Y-VTOqgYlfA==
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://uym7.test-app.link/9PgLOiWA22"}'
+    http_version: 
+  recorded_at: Tue, 07 Jan 2020 00:19:29 GMT
+- request:
+    method: delete
+    uri: https://api.branch.io/v1/url?url=https://uym7.test-app.link/9PgLOiWA22
+    body:
+      encoding: UTF-8
+      string: '{"branch_key":"<BRANCH_KEY>","branch_secret":"<BRANCH_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '62'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Tue, 07 Jan 2020 00:19:29 GMT
+      Server:
+      - openresty/1.13.6.2
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 517d2577302def91b3dd63d535e63fd2.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - OgAnAB3Xj0f3J4IFC3Aen-RWrqbNCAIwGkaVYHBEmWpby09RtY3iIg==
+    body:
+      encoding: UTF-8
+      string: '{"url":"https://uym7.test-app.link/9PgLOiWA22","deleted":true}'
+    http_version: 
+  recorded_at: Tue, 07 Jan 2020 00:19:30 GMT
+- request:
+    method: get
+    uri: https://api.branch.io/v1/url?branch_key=<BRANCH_KEY>&url=https://uym7.test-app.link/9PgLOiWA22
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Content-Type:
+      - application/json
+      Accept:
+      - application/json
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '313'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Date:
+      - Tue, 07 Jan 2020 00:19:30 GMT
+      Server:
+      - openresty/1.13.6.2
+      Vary:
+      - Accept-Encoding
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 786adf19b53b584c0a277661acb7690d.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - MIA3-C1
+      X-Amz-Cf-Id:
+      - A9hXMo1ggP1JVlAZESVWRf6PHAPOkNEIy9D5_oGvch3fOsmItoOOmw==
+    body:
+      encoding: UTF-8
+      string: '{"data":{"+url":"https://uym7.test-app.link/9PgLOiWA22","~tags":["test","test-delete"],"~creation_source":0,"~id":"742887335519845531","$one_time_use":false,"~channel":"code","~feature":"test","url":"https://uym7.test-app.link/9PgLOiWA22"},"type":0,"tags":["test","test-delete"],"feature":"test","channel":"code"}'
+    http_version: 
+  recorded_at: Tue, 07 Jan 2020 00:19:30 GMT
 recorded_with: VCR 3.0.3

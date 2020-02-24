@@ -208,5 +208,36 @@ describe BranchIO::Client do
         expect(props.channel).to eq("retest")
       end
     end
+
+    describe "#delete_link!" do
+      let!(:url) { client.link(channel: "code", feature: "test", tags: ["test", "test-delete"]).url }
+
+      it "calls #delete_link" do
+        res = double(validate!: true)
+        expect(client).to receive(:delete_link).and_return(res)
+        client.delete_link!(url)
+      end
+    end
+
+    describe "#delete_link" do
+      let!(:url) { client.link(channel: "code", feature: "test", tags: ["test", "test-delete"]).url }
+
+      it "succeeds" do
+        expect(
+          client.delete_link(url)
+        ).to be_success
+      end
+
+      it "deletes the link from the server" do
+        pending unless ENV["BRANCH_KEY"]
+
+        # Delete the link
+        res = client.delete_link(url)
+
+        # It should be successful
+        expect(res).to be_kind_of(BranchIO::Client::LinkDeletedResponse)
+        expect(res.url).not_to be_nil
+      end
+    end
   end # /Client
 end

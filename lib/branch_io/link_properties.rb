@@ -7,6 +7,7 @@ module BranchIO
     attr_reader :stage
     attr_reader :alias
     attr_reader :type
+    attr_reader :duration
     attr_reader :data
 
     def self.wrap(options)
@@ -25,6 +26,7 @@ module BranchIO
       @stage    = options.delete(:stage)    || options.delete("stage")
       @alias    = options.delete(:alias)    || options.delete("alias")
       @type     = options.delete(:type)     || options.delete("type")
+      @duration     = options.delete(:duration)     || options.delete("duration")
       @data     = options.delete(:data)     || options.delete("data")
 
       unless options.empty?
@@ -41,6 +43,7 @@ module BranchIO
       json[:stage]    = stage if stage
       json[:alias]    = self.alias if self.alias
       json[:type]     = type if type
+      json[:duration] = duration if duration
       json[:data]     = data if data
       json
     end
